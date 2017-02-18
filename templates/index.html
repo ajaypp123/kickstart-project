@@ -1,13 +1,72 @@
 <!DOCTYPE html>
-<head>
 
+<head>
 	<title>Kickstart Server Configuration Tool</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/simple-sidebar.css" rel="stylesheet">
-	<script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/notify.min.js"></script>
+	<script src="js/jquery-1.4.2.min.js"></script>
+    <script src="js/effect.js"></script>
+    <script src="js/form.js"></script>
+
+<!-- First Magic Code Starts- Please Don't change position of code -->
+	<script type="text/javascript">
+
 	
+		$(document).ready(function() {
+			notify('black');		
+		});
+		
+	// #Disabled only if checkbox is checked
+		window.onload = toggleSelect(); 
+		function toggleSelect()
+		{
+		  var isChecked = document.getElementById("display-checkbox").checked;
+		  document.getElementById("first-boot").disabled = !isChecked;
+		}
+		
+		function notify(style) {
+			$.notify({
+				title: 'Please select your choice for configuration !',
+				text: 'Later you can preview and save it as .cfg file.',
+				image: "<img src='img/file.png'/>"
+			}, {
+				style: 'notify',
+				className: style,
+				autoHide: true,
+				clickToHide: true,
+				  globalPosition: 'bottom left',
+
+			});
+		}
+	</script>
+<!-- First Magic Code Starts- Please Don't change position of code -->
+
 	<style>
+	
+			
+			th, td {
+				padding: 5px;
+				text-align: left;
+			}
+			table#t01 {
+				width: 100%;    
+				background-color: #f1f1c1;
+			}
+			#mysave{
+						top:580px;
+						left:1200px;
+						position:fixed; 
+						z-index:100000;		
+			}
+			#preview{
+						top:580px;
+						left:1090px;
+						position:fixed; 
+						z-index:100000;	
+			}
 			#dev-wrapper{
 					position:fixed;
 			}
@@ -132,7 +191,6 @@
 				<button id="fifthbutton" type="button" class="btn btn-primary">Credits 	&#10026;</button>
 			  </div>
 			</div>
-			<h3 id="maintitle" align="center">Please select your choice for configuration</h3>
 		</div>
 	</nav>
 	
@@ -156,430 +214,165 @@
 	
     </script>
 	
+	<form class="form-horizontal" action="/" method="POST">
+	
+	
+	<!-- #1 Menu -->
 		<div id="menu1">
-		<br/><br/><br/><br/><br/><br/>
-		<h3 align="center">Basic Configuration</h3>
+			<br/><br/><br/>
+			<h3 align="center">Basic Configuration</h3>
+			<hr/>
+				<fieldset>	
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Default Language:</label>  
+					  <div class="col-md-5">
+						<select class="form-control" style="width:300px">
+							<option>English (South Africa)</option>
+							<option>Value</option>
+							<option>Value</option>
+						</select>
+					  </div>
+					</div>
+								
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Keyboard:</label>  
+					  <div class="col-md-5">
+						<select class="form-control" style="width:300px">
+							<option>U.S.English</option>
+							<option>Value</option>
+							<option>Value</option>
+						</select>
+					  </div>
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Time Zone:</label>  
+					  <div class="col-md-5">
+						<select class="form-control" style="width:300px">
+							<option>Africa/Abidjin</option>
+							<option>Value</option>
+							<option>Value</option>
+						</select>
+					  </div>
+					</div>
+					
+					<div class="form-group" align="center">						
+						<input type="checkbox" name="basic-checkbox1" id="basic-checkbox1" value="uncheck"> 
+						<label name="pass">Use UTC clock</label>  
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Root Password:</label>  
+					  <div class="col-md-5">
+							<input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
+					  </div>
+					</div>
+		
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Confirm Password:</label>  
+					  <div class="col-md-5">
+							<input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
+					  </div>
+					</div>
+		
+					<div class="form-group" align="center">						
+						<input type="checkbox" name="basic-checkbox1" id="basic-checkbox1" value="uncheck"> 
+						<label name="pass">Encrypt root password</label>  
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-md-4 control-label" name="pass">Target Architecture:</label>  
+					  <div class="col-md-5">
+						<select class="form-control" style="width:300px">
+							<option>x86, AMD64, or Intel EM64T</option>
+							<option>Intel Itanium</option>
+							<option>IBM iSeries</option>
+							<option>IBM pSeries</option>
+							<option>IBM zSeries/s390</option>
+						</select>
+					  </div>
+					</div>
+					
+					<div class="form-group" align="center">						
+						<input type="checkbox" name="basic-checkbox1" id="basic-checkbox1" value="uncheck"> 
+						<label name="pass">Reboot System after installation</label>  
+					</div>
+					
+					<div class="form-group" align="center">						
+						<input type="checkbox" name="basic-checkbox1" id="basic-checkbox1" value="uncheck"> 
+						<label name="pass">Perform installation in text mode (graphical is default)</label>  
+					</div>					
+					
+				</fieldset>
+		</div>
 		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
 
+	<!-- #2 Menu -->
+		<h3 align="center">Display Configuration</h3>
+			<hr/>
+				<fieldset>
+					<table align="center" style="width:70%">
+						<tr>
+							<td id="display-third-cell">
+								<label>On first boot, Setup Agent :</label>
+							</td>
+							<td style="width:330px">
+								<div class="col-md-5">
+									<select class="form-control" name="first-boot" id="first-boot" style="width:275px">
+										<option value="Disabled">Disabled</option>
+										<option value="Enabled">Enabled</option>
+										<option value="Reconfigure">Enabled in reconfiguration mode</option>
+									</select>
+								</div>
+							</td>
+							<td>				
+								<input type="checkbox" name="display-checkbox" id="display-checkbox" value="check" onClick="toggleSelect()" checked> 
+								<input type="hidden" name="display-checkbox" id="display-checkbox" value="uncheck" onClick="toggleSelect()" checked> 
+								<label>Install a graphical environment</label>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			<hr/>
+	
+	<!-- Preview and Save Button Starts -->
+	<div id="mysave">
+		<div id="page-content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<input type="submit" class="btn btn-default" value="Save File"/>
+						</div>
+					</div>
 				</div>
-		<!-- #do not close this, this define menu align start for menu2 @yvt -->		
-				<div id="menu2"></div>
-		<!-- #do not close this, this define menu align end for menu2 @yvt -->		
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
+		</div>
 	</div>
 
-	<div>
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
+	<div id="preview">
+		<div id="page-content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<input type="submit" align="left" class="btn btn-default" value="Preview File"/>
+						</div>
+					</div>
 				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu3">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
-
-	<div id="menu2">
-		<h3 align="center">Installtion Configuration</h3>
-		<hr/>
-		<form class="form-horizontal" action="/" method="POST">
-			<fieldset>
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="pass">Root Password</label>  
-				  <div class="col-md-5">
-				  <input id="pass" name="pass" type="text" placeholder="" class="form-control input-md" required="">  
-				  </div>
-				</div>
-
-				<div class="form-group">
-				  <label class="col-md-4 control-label" name="rpass">Conform Password</label>  
-				  <div class="col-md-5">
-				  <input id="rpass" name="rpass" type="text" placeholder="" class="form-control input-md" required="">
-				  </div>
-				</div>
-			
-				<div class="form-group">
-				  <label class="col-md-4 control-label"></label>
-				  <div class="col-md-4">
-					<input type="submit" class="btn btn-default" value="Save File"/>
-				  </div>
-				</div>
-			</fieldset>
-		</form>
-		<hr/>
-	</div>
+		</div>
+	</div>	
+	<!-- Preview and Save Button Ends -->
+	</form>
 	
 </body>
+
+<!-- Second Magic Code Starts- Please Don't change position of code -->
+	<body>
+		<head>
+			<link href="css/notify-notify.css" rel="stylesheet" />
+			<script src="js/jquery-3.1.1.js"></script>
+			<script src="js/notify.js"></script>
+			<script src="js/notify-notify.js"></script>
+		</head>
+	</body>
+<!-- Second Magic Code Ends- Please Don't change position of code -->
+
 </html>
