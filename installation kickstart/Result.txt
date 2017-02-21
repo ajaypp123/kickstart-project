@@ -1,0 +1,33 @@
+# Install OS instead of upgrade
+install
+
+# Upgrade existing installation 
+upgrade
+
+**************cdrom*************
+
+# Use CDROM installation media 
+cdrom
+
+**************nfs*************
+# Use NFS installation media
+nfs --server=192.168.200.1 --dir=pub/ks.cfg
+
+**************ftp*************
+# Use network installation
+url --url="ftp://192.168.200.1/pub/ks.cfg"
+
+# Use network installation
+url --url="ftp://user:pass@192.168.200.1/pub/ks.cfg"
+
+*****************http*****************
+# Use network installation
+url --url="http://server/dict"
+
+
+*****************hard drive*****************
+# Use hard drive installation media
+harddrive --dir=dict --partition=partition
+
+
+

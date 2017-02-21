@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <script src="{{ url_for('static', filename='js/jquery-1.4.2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+</head>
+
+<body>
+
+    <div id="install_config">
+        <h3 align="center">Installtion Configuration :</h4>
+
+            <form method="POST">
+                <label id="install_new_installation_label">Perform new installation </label>
+                <input id="install_new_install" name="install_new_installation" type="radio" value="# Install OS instead of upgrade $$install" checked>
+                <br><br>
+                <label id="install_upgrade_installation_label">Upgrade an existing installation </label>
+                <input id="install_upgrade_install" name="install_new_installation" type="radio" value="# Upgrade existing installation $$upgrade">
+                <br><br>
+<!-- ================================================================================================================================== -->
+                <h4 align="center">Installtion Sources :</h4>
+                <label id="install_cd_rom_label">CD-ROM </label>
+                <input id="install_cd_rom" name="install_source" type="radio" value="# Use CDROM installation media $$cdrom" checked>
+                <br><br>
+                <label id="install_nfs_label">NFS </label>
+                <input id="install_nfs" name="install_source" type="radio" value="# Use NFS installation media $$nfs">
+                <br><br>
+                <label id="install_http_label">HTTP </label>
+                <input id="install_http" name="install_source" type="radio" value="# Use network installation $$http">
+                <br><br>
+                <label id="install_ftp_label">FTP </label>
+                <input id="install_ftp" name="install_source" type="radio" value="# Use network installation $$ftp">
+                <br><br>
+                <label id="install_hard_drive_label">Hard Drive </label>
+                <input id="install_hard_drive" name="install_source" type="radio" value="# Use hard drive installation media $$hard_drive">
+                <br><br>
+<!-- ================================================================================================================================== -->
+                <div class="install_ser_dict">
+                    <label id="install_server_label">Server </label>
+                    <input id="install_source_server" name="install_source_server" type="text">
+                    <br><br>
+                    <label id="install_directory_label">Directory </label>
+                    <input id="install_source_dict" name="install_source_dict" type="text">
+                </div>
+                <br><br>
+                <div class="install_ftp_chk">
+                    <label id="install_ftp_specify_label">Specify an FTP Username and Password </label>
+                    <input id="install_check_ftp" name="install_check_ftp" type="checkbox" value="install_check_ftp">
+                </div>
+                <br>
+                <div class="install_ftp_userpass">
+                    <label id="install_ftp_user_label">FTP Username</label>
+                    <input id="install_ftp_user" name="install_ftp_user" type="text">
+                    <br><br>
+                    <label id="install_ftp_pass_label">FTP Password </label>
+                    <input id="install_ftp_pass" name="install_ftp_pass" type="text">
+                </div>
+                <input id="preview_all" type="button" name="preview" value="preview">
+                <input type="submit" name="submit" value="Save">
+            </form>
+
+            <!-- The Modal -->
+
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+
+                    <p id="file_installation_line1">1</p>
+                    <p id="file_installation_line2">2</p>
+                    <p id="file_installation_line3">3</p>
+                    <p id="file_installation_line4">4</p>
+
+                </div>
+            </div>
+
+</body>
+
+
+
+</html>
