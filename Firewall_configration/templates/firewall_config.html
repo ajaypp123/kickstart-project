@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <script src="{{ url_for('static', filename='js/jquery-1.4.2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+</head>
+
+<body>
+    <div id="firewall_config">
+        <form method="POST">
+            <h4 align="center">Firewall Configration :</h4>
+            <br>
+            <br>
+            <label name="firewall_selinux_label">SELinux :</label>
+            <select name="firewall_selinux_state" id="firewall_selinux_state">
+                <option value="selinux --enforcing">Active</option>
+                <option value="selinux --permissive">Warn</option>
+                <option value="selinux --disabled">Disabled</option>
+            </select>
+            <br>
+            <br>
+            <label name="firewall_sequrity_level_label">Sequrity Level :</label>
+            <select name="firewall_sequrity_level" id="firewall_sequrity_level" class="firewall_sequrity_level">
+                <option value="Enable_firewall">Enable firewall</option>
+                <option value="Disable_firewall">Disable firewall</option>
+            </select>
+            <br>
+            <br>
+            <div id="firewall_trusted_service_config">
+                <label name="firewall_Trusted_service">Trusted Services :</label>
+                <br>
+                <input type="checkbox" name="firewall_http_service" id="firewall_http_service" value="--http"> WWWW(HTML)
+                <br>
+                <input type="checkbox" name="firewall_ftp_service" id="firewall_ftp_service" value="--ftp"> FTP
+                <br>
+                <input type="checkbox" name="firewall_ssh_service" id="firewall_ssh_service" value="--ssh"> SSH
+                <br>
+                <input type="checkbox" name="firewall_telnet_service" id="firewall_telnet_service" value="--telnet"> Telnet
+                <br>
+                <input type="checkbox" name="firewall_mail_service" id="firewall_mail_service" value="--smtp"> SMTP(mail)
+                <br>
+                <br>
+                <label name="firewall_other_form_label">Other Port (1029:tcp) :</label>
+                <input type="text" name="firewall_other_port" id="firewall_other_port" value="">
+            </div>
+            <br>
+            <br>
+            <input class="form-control input-md" id="preview_all" type="button" name="preview" value="preview">
+            <input class="form-control input-md" type="submit" name="submit" value="Save"> </form>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="file_firewall_line1">File Preview..</p>
+                <p id="file_firewall_line2">File Preview..</p>
+                <p id="file_firewall_line3">File Preview..</p>
+                <p id="file_firewall_line4">File Preview..</p>
+            </div>
+
+        </div>
+
+
+</body>
+
+</html>

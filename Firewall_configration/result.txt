@@ -1,0 +1,29 @@
+selinux
+
+active
+# SELinux configuration
+selinux --enforcing
+
+warn
+# SELinux configuration
+selinux --permissive
+
+disabled
+# SELinux configuration
+selinux --disabled
+--------------------------------------------------------------------------
+sequrity level 
+diabled
+# Firewall configuration
+firewall --disabled
+
+enable
+# Firewall configuration
+firewall --enabled
+
+# Firewall configuration
+firewall --enabled --http --ftp --ssh --telnet --smtp
+
+port
+#Firewall configuration
+firewall --enabled --http --ftp --ssh --telnet --smtp --port=fgdfgdfg

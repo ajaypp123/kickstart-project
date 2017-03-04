@@ -1,0 +1,119 @@
+<html>
+
+    <head>
+        <script src="{{ url_for('static', filename='js/jquery-1.4.2.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+    </head>
+
+    <body>
+
+        <div id="auth_config">
+            <h3 align="center">Authentication</h3>
+
+            <form method="POST">
+            	<h4>Authentication Configuration</h4>
+                <label id="auth_shadow_pass_label">Use Shadow Passwords  : </label>
+                <input id="auth_shadow_pass" name="auth_shadow_pass" type="checkbox" value=" --useshadow" checked >			
+                <br>
+                <label id="auth_security_algo_label">Security Password Algorithm : </label>
+                <select name="auth_security_algo" id="auth_security_algo">
+                	<option value=" --passalgo=sha512">SHA512</option>
+                	<option value=" --passalgo=sha256">SHA256</option>
+                	<option value=" --passalgo=md5">MD5</option>
+            	</select>
+                <br><br>
+                <label id="auth_finger_reader_label">Enable Fingerprint Reader  : </label>
+                <input id="auth_finger_reader" name="auth_finger_reader" type="checkbox" value=" --enablefingerprint">		
+                <br>
+<!-- ================================================================================================================================== -->
+                <h4>NIS Authentication</h4>
+                <label id="auth_enable_nis_label">Enable NIS :  </label>
+                <input id="auth_enable_nis" name="auth_enable_nis" type="checkbox" value=" --enablenis">
+                <div id="auth_nis_block">
+                <br><br>
+                 <label id="auth_nis_domain_label">NIS Domain : </label>
+                 <input id="auth_nis_domain" name="auth_nis_domain" type="text">
+                <br><br>
+                <label id="auth_broadcast_nis_label">Use broadcast to find NIS server  : </label>
+                <input id="auth_broadcast_nis" name="auth_broadcast_nis" type="checkbox" value=" --enablenis">
+                <br><br>
+                 <label id="auth_nis_server_label">NIS Server : </label>
+                 <input id="auth_nis_server" name="auth_nis_server" type="text">
+                 </div>
+                <br><br>               
+<!-- ================================================================================================================================== -->
+                <h4>LDAP Authentication:</h4>                
+                <label id="auth_enable_ldap_label">Enable LDAP :  </label>
+                <input id="auth_enable_ldap" name="auth_enable_ldap" type="checkbox" value=" --enableldap --enableldapauth">
+                <div id="auth_ldap_block">
+                <br><br>               
+                 <label id="auth_ldap_server_label">LDAP Server : </label>
+                 <input id="auth_ldap_server" name="auth_ldap_server" type="text">
+                <br><br>
+                 <label id="auth_ldap_base_label">LDAP Base Name : </label>
+                 <input id="auth_ldap_base" name="auth_ldap_base" type="text">
+                <br><br>
+                <label id="auth_ldap_certificate_label">Load CA certificate :  </label>
+                <input id="auth_ldap_certificate" name="auth_ldap_certificate" type="checkbox" value=" --ldaploadcacert=">
+                <br><br>
+                 <label id="auth_ldap_cert_url_label">CA Certificate URL : </label>
+                 <input id="auth_ldap_cert_url" name="auth_ldap_cert_url" type="text" >
+                 </div>
+                <br><br>
+<!-- ================================================================================================================================== -->                
+                <h4>Kerberos 5 Authentication:</h4>
+                <label id="auth_enable_krb5_label">Enable Kerberos 5 :  </label>
+                <input id="auth_enable_krb5" name="auth_enable_krb5" type="checkbox" value=" --enablekrb5">
+                <div id="auth_krb_block">
+                <br><br>
+                 <label id="auth_krb5_realm_label">Kerberos Realm : </label>
+                 <input id="auth_krb5_realm" name="auth_krb5_realm" type="text" >
+                <br><br>
+                 <label id="auth_kerberos_domain_label">Kerberos Domain Controller : </label>
+                 <input id="auth_kerberos_domain" name="auth_kerberos_domain" type="text" >
+                <br><br>
+                 <label id="auth_krb5_master_label">Kerberos Master server : </label>
+                 <input id="auth_krb5_master" name="auth_krb5_master" type="text" >
+                 </div>
+                <br><br>
+<!-- ================================================================================================================================== -->                
+                <h4>SMB Authentication:</h4>
+                <label id="auth_enable_smb_label">Enable SMB Authentication :  </label>
+                <input id="auth_enable_smb" name="auth_enable_smb" type="checkbox" value=" --enablesmbauth">
+                <div id="auth_smb_block">
+                <br><br>
+                 <label id="auth_smb_server_label">SMB Server : </label>
+                 <input id="auth_smb_server" name="auth_smb_server" type="text" >
+                <br><br>
+                 <label id="auth_smb_workgrp_label">SMB Workgroup : </label>
+                 <input id="auth_smb_workgrp" name="auth_smb_workgrp" type="text" >
+                 </div>
+                <br><br>
+                
+<!-- ================================================================================================================================== -->                 
+               <h4>Name Switch Cache Daemon Authentication:</h4>
+                <label id="auth_switch_cache_label">Enable name switch cache :  </label>
+                <input id="auth_switch_cache" name="auth_switch_cache" type="checkbox" value=" --enablesmbauth"> 
+                <br><br>
+<!-- ================================================================================================================================== -->                
+                <input id="preview_all" type="button" name="preview" value="preview">
+                <input type="submit" name="submit" value="Save">
+            </form>
+
+            <!-- The Modal -->
+
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+
+                    <p id="file_auth_config_line1"># System authorization information</p>
+                    <p id="file_auth_config_line2">2</p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
