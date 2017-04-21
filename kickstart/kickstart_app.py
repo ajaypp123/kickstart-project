@@ -8,7 +8,9 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         if request.form['save'] == 'Save File':
-            fi = open('ks.cfg', 'w')
+            file_name = request.form['file_name']
+            file_name_str = file_name + ".cfg"
+            fi = open(file_name_str , 'w')
             ###Basic Configuration
             get_target = request.form.to_dict('target_architecture')
             target_architecture = get_target['target_architecture']
@@ -340,6 +342,23 @@ def Customise():
 
 @app.route('/Setup.html', methods=['POST', 'GET'])
 def Setup():
+        if request.method == 'POST':
+        if request.form['submit'] == 'FTP Start':
+            os.system("dnf -y install vsftpd")
+            os.system("systemctl restart vsftpd")
+            os.system("systemctl enable vsftpd")
+            os.system("firewall-cmd --permanent --add-port=21/tcp")
+            os.system("firewall-cmd --reload")
+            return "<script> alert('FTP configured');  window.location = 'Setup.html';</script>"
+        elif request.form['submit'] == 'FTP Stop':
+            os.system("/sbin/service vsftpd stop")
+            return "<script> alert('FTP service Stop');  window.location = 'Setup.html';</script>"
+        elif request.form['submit'] == 'Upload File':
+            ftp_file = request.form['ftp_file']
+            ftp_upload_cmd = "cp " + ftp_file + " /var/ftp/pub/cfg_files/"
+            os.system(ftp_upload_cmd)
+            os.system("restorecon /var/ftp/pub/cfg_files/*")
+            return "<script> alert('File Uploaded on FTP server'); window.location = 'Setup.html';</script>"
     return render_template('Setup.html')
 
 
