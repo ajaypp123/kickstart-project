@@ -1041,10 +1041,19 @@
                                             <optgroup label="Chinnamon Desktop"></optgroup>
                                             <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="cinnamon-desktop" id="pkg_group_cinnamon-desktop" name="pkg_group_cinnamon-desktop">Chinnamon</label></li>
                                         </div>
-                                        <div id="pkg_mate_package">
+                                        <div id="pkg_mate_package" class="pkg_packages" style="display: none;">
+                                             <optgroup label="MATE Desktop"></optgroup>
+                                             <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mate-desktop" id="pkg_group_mate-desktop" name="pkg_group_mate-desktop">MATE</label></li>
+                                             <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mate-applications" id="pkg_group_mate-applications" name="pkg_group_mate-applications">MATE Applications</label></li>
+                                             <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mate-compiz" id="pkg_group_mate-compiz" name="pkg_group_mate-compiz">MATE Compiz </label></li>
 
                                         </div>
-                                        <div id="pkg_hawaii_package">
+                                        <div id="pkg_hawaii_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="Hawaii Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="hawaii-apps" id="pkg_group_hawaii-apps" name="pkg_group_hawaii-apps">Applications for the Hawaii Desktop</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="hawaii-desktop" id="pkg_group_hawaii-desktop" name="pkg_group_hawaii-desktop">Hawaii</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="hawaii-office" id="pkg_group_hawaii-office" name="pkg_group_hawaii-office">Hawaii Office</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="hawaii-media" id="pkg_group_hawaii-media" name="pkg_group_hawaii-media">Multimedia Support for Hawaii</label></li>
 
                                         </div>
                                         <div id="pkg_sugar_package">
@@ -1053,8 +1062,35 @@
                                         <div id="pkg_dev_package">
 
                                         </div>
-                                        <div id="pkg_ser_package">
-
+                                        <div id="pkg_ser_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="Servers"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="web-server" id="pkg_group_web-server" name="pkg_group_web-server">Basic Web Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="cloud-infrastructure" id="pkg_group_cloud-infrastructure" name="pkg_group_cloud-infrastructure">Cloud Infrastructure</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="dns-server" id="pkg_group_dns-server" name="pkg_group_dns-server">DNS Name Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="directory-server" id="pkg_group_directory-server" name="pkg_group_directory-server">Directory Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="dogtag" id="pkg_group_dogtag" name="pkg_group_dogtag">Dogtag Certificate System</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="ftp-server" id="pkg_group_ftp-server" name="pkg_group_ftp-server">FTP Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="freeipa-server" id="pkg_group_freeipa-server" name="pkg_group_freeipa-server">FreeIPA Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="haproxy" id="pkg_group_haproxy" name="pkg_group_haproxy">HAProxy</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="ha" id="pkg_group_ha" name="pkg_group_ha">High Availability</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="javaenterprise" id="pkg_group_javaenterprise" name="pkg_group_javaenterprise">Java Application Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="legacy-network-server" id="pkg_group_legacy-network-server" name="pkg_group_legacy-network-server">Legacy Network Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="load-balancer" id="pkg_group_load-balancer" name="pkg_group_load-balancer">Load Balancer</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mail-server" id="pkg_group_mail-server" name="pkg_group_mail-server">Mail Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mysql" id="pkg_group_mysql" name="pkg_group_mysql">MariaDB(MySQL) Database</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="mongodb" id="pkg_group_mongodb" name="pkg_group_mongodb">MongoDB</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="network-server" id="pkg_group_network-server" name="pkg_group_network-server">Network Servers</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="news-server" id="pkg_group_news-server" name="pkg_group_news-server">News Server</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="php" id="pkg_group_php" name="pkg_group_php">PHP</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="perl-web" id="pkg_group_perl-web" name="pkg_group_perl-web">Perl for Web</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="sql-server" id="pkg_group_sql-server" name="pkg_group_sql-server">PostgreSQL Database</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="printing" id="pkg_group_printing" name="pkg_group_printing">Printing Support</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="python-web" id="pkg_group_python-web" name="pkg_group_python-web">Python</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="rubyonrails" id="pkg_group_rubyonrails" name="pkg_group_rubyonrails">Ruby On Rails</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="server-cfg" id="pkg_group_server-cfg" name="pkg_group_server-cfg">Server Configuration Tools</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="tomcat" id="pkg_group_tomcat" name="pkg_group_tomcat">Tomcat</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="virtulization" id="pkg_group_virtulization" name="pkg_group_virtulization">Virtulization</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="smb-server" id="pkg_group_smb-server" name="pkg_group_smb-server">Windows File Server</label></li>
                                         </div>
                                         <div id="pkg_base_package">
 
@@ -1128,7 +1164,30 @@
                     </fieldset>
                 </div>
 
-                <!-- Preview and Save Button Starts -->
+                <!-- Preview and Save Button Starts --><br><br><hr/><br>
+                <fieldset id="field_dev" style="">
+                 <div id="cfg_file_label">
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label style="" class="control-label">File Name: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cfg_file_name">
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input  class="form-control input-md" type="text" id="file_name" name="file_name" value="ks"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="mysave">
                     <div id="page-content-wrapper">
                         <div class="container-fluid">
@@ -1151,7 +1210,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Preview and Save Button Ends -->
+                <!-- Preview and Save Button Ends --></fieldset>
             </form>
         </div>
 
@@ -1161,7 +1220,15 @@
             <div id="addcontent" class="modal-content">
                 <span id="previewspan" class="close">&times;</span>
                 <p id="previewspan"></p>
+                <h2>Your prefered configuration</h2>
                 <!-- Basic Configuration -->
+                <p id="basic_conf1"></p>
+                <p id="basic_conf2"></p>
+                <p id="basic_conf3"></p>
+                <p id="basic_conf4"></p>
+                <p id="basic_conf5"></p>
+                <p id="basic_conf6"></p>
+                <p id="basic_conf7"></p>
                 <p id="file_installation_line1"></p>
                 <p id="file_installation_line2"></p>
                 <p id="file_installation_line3"></p>
