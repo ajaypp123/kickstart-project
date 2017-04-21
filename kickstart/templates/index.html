@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kickstart Server Configuration Tool</title>
+        <script src="{{ url_for('static', filename='js/part_js_tr0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/notify.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.1.0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/others.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/notify_script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/note_eff.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/title.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/simple-sidebar.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/part_css_tr0.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+        <script src="{{ url_for('static', filename='js/notify.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/notify-notify.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/notify-notify.css')}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#" id="firsttitle">Kickstart Configuration Tool</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#menu1">Basic Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu2">Installtion Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu3">Boot-Loader Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu4">Partition Information</a>
+                    </li>
+                    <li>
+                        <a href="#menu5">Network Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu6">Authentication Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu7">Firewall Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu8">Display Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu9">Package Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu10">Pre-Installtion Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu11">Post-Installtion Configuration</a>
+                    </li>
+                </ul>
+            </div>
+
+            <nav>
+                <div id="dev-fix">
+                    <div class="container" align="center" style="padding-top: 10px" >
+                        <div class="btn-group">
+                            <a href="help.html"><button style="background-color: #3C3C3C;" name="firstbutton" id="firstbutton" type="button" class="btn btn-primary" value="help">Help</button></a>
+                            <a href="Customise.html"><button style="background-color: #3C3C3C;" name="secondbutton" id="secondbutton" type="button" class="btn btn-primary" value="Customise">Customise</button></a>
+                            <a href="/"><button style="background-color: #000000;" name="thirdbutton" id="thirdbutton" type="button" class="btn btn-primary" value="Configuration">Configuration</button></a>
+                            <a href="Setup.html"><button style="background-color: #3C3C3C;" name="forthbutton" id="forthbutton" type="button" value="setup" class="btn btn-primary">Setup</button></a>
+                            <a href="Credits.html"><button style="background-color: #3C3C3C;" name="fifthbutton" id="fifthbutton" type="button" class="btn btn-primary" value="Credits">Credits&#10026;</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="myslide">
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> << </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $("#menu-toggle").click(function(e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+                
+            </script>
+            <form class="form-horizontal" method="POST">
+                <!-- #1 Menu -->
+                <div id="menu1"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Basic Configuration</h3><hr/></div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Default Language:</label>
+                            <div class="col-md-5">
+                                <select class="form-control" name="language" id="language" style="width:275px">
+                                    <option value="lang sq_AL">Albanian (Albania)</option>
+                                    <option value="lang sq_MK">Albanian (Macedonia, Republic of)</option>
+                                    <option value="lang ar_EG">Arabic (Egypt)</option>
+                                    <option value="lang ar_IN">Arabic (India)</option>
+                                    <option value="lang ar_IQ">Arabic (Iraq)</option>
+                                    <option value="lang ar_SA">Arabic (Saudi Arabia)</option>
+                                    <option value="lang ar_AE">Arabic (United Arab Emirates)</option>
+                                    <option value="lang bn_BD">Bangla (Bangladesh)</option>
+                                    <option value="lang bn_IN">Bangla (India)</option>
+                                    <option value="lang be_BY">Belarusian (Belarus)</option>
+                                    <option value="lang bg_BG">Bulgarian (Bulgaria)</option>
+                                    <option value="lang my_MM">Burmese (Myanmar)</option>
+                                    <option value="lang zh_CN">Chinese (Simplified)</option>
+                                    <option value="lang zh_TW">Chinese (Traditional)</option>
+                                    <option value="lang hr_HR">Croatian (Croatia)</option>
+                                    <option value="lang cs_CZ">Czech (Czech Republic)</option>
+                                    <option value="lang da_DK">Danish (Denmark)</option>
+                                    <option value="lang nl_NL">Dutch (Netherlands)</option>
+                                    <option value="lang en_AU">English (Australia)</option>
+                                    <option value="lang en_US">English (USA)</option>
+                                    <option value="lang en_IN">English (India)</option>
+                                    <option value="lang en_GB">English (Great Britian)</option>
+                                    <option value="lang fi_FI">Finnish (Finland)</option>
+                                    <option value="lang fr_FR">French (France)</option>
+                                    <option value="lang ka_GE">Georgian (Georgia)</option>
+                                    <option value="lang de_DE">German (Germany)</option>
+                                    <option value="lang el_GR">Greek (Greece)</option>
+                                    <option value="lang hi_IN">Hindi (India)</option>
+                                    <option value="lang hu_HU">Hungarian (Hungary)</option>
+                                    <option value="lang ja_JP">Japanese (Japan)</option>
+                                    <option value="lang mr_IN">Marathi (India)</option>
+                                    <option value="lang pt_PT">Portuguese (Portugal)</option>
+                                    <option value="lang es_ES">Spanish (Spain)</option>
+                                    <option value="lang sv_SE">Swedish (Sweden)</option>
+                                    <option value="lang tr_TR">Turkish (Turkey)</option>
+                                    <option value="lang uk_UA">Ukrainian (Ukraine)</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Keyboard:</label>
+                            <div class="col-md-5">
+                                <select class="form-control" name="keyboard" id="keyboard" style="width:275px">
+                                    <option value="keyboard af">Afghani</option>
+                                    <option value="keyboard al">Albanian</option>
+                                    <option value="keyboard ara">Arabic</option>
+                                    <option value="keyboard ara_qwerty">Arabic - Arabic (qwerty)</option>
+                                    <option value="keyboard am">Armenian</option>
+                                    <option value="keyboard bd">Bangla</option>
+                                    <option value="keyboard by">Belarusian</option>
+                                    <option value="keyboard be">Belgian</option>
+                                    <option value="keyboard bg">Bulgarian</option>
+                                    <option value="keyboard cn">Chinese</option>
+                                    <option value="keyboard hr">Croatian</option>
+                                    <option value="keyboard cz">Czech</option>
+                                    <option value="keyboard cz_qwerty">Czech - Czech (qwerty)</option>
+                                    <option value="keyboard dk">Danish</option>
+                                    <option value="keyboard gb">English (UK)</option>
+                                    <option value="keyboard us">English (US)</option>
+                                    <option value="keyboard fr">French</option>
+                                    <option value="keyboard ge">Georgian</option>
+                                    <option value="keyboard de">German</option>
+                                    <option value="keyboard gr">Greek</option>
+                                    <option value="keyboard hu">Hungarian</option>
+                                    <option value="keyboard in">Indian</option>
+                                    <option value="keyboard in_mar-kagapa">Indian - Marathi (KaGaPa phonetic)</option>
+                                    <option value="keyboard iq">Iraqi</option>
+                                    <option value="keyboard it">Italian</option>
+                                    <option value="keyboard jp">Japanese</option>
+                                    <option value="keyboard pl">Polish</option>
+                                    <option value="keyboard pt">Portuguese</option>
+                                    <option value="keyboard ru">Russian</option>
+                                    <option value="keyboard es">Spanish</option>
+                                    <option value="keyboard ch">Switzerland</option>
+                                    <option value="keyboard th">Thai</option>
+                                    <option value="keyboard tr">Turkish</option>
+                                    <option value="keyboard ua">Ukrainian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Time Zone:</label>
+                            <div class="col-md-5">
+                                <select class="form-control" name="timezone" id="timezone" style="width:275px">
+                                    <option value="timezone Africa/Abidjan">Africa/Abidjan</option>
+                                <option value="timezone Africa/Bamako">Africa/Bamako</option>
+                                <option value="timezone Africa/Cairo">Africa/Cairo</option>
+                                <option value="timezone Africa/Dakar">Africa/Dakar</option>
+                                <option value="timezone Africa/El_Aaiun">Africa/El_Aaiun</option>
+                                <option value="timezone Africa/Harare">Africa/Harare</option>
+                                <option value="timezone Africa/Johannesburg">Africa/Johannesburg</option>
+                                <option value="timezone Africa/Lagos">Africa/Lagos</option>
+                                <option value="timezone Africa/Porto-Novo">Africa/Porto-Novo</option>
+                                <option value="timezone America/Araguaina">America/Araguaina</option>
+                                <option value="timezone America/Argentina/Cordoba">America/Argentina/Cordoba</option>
+                                <option value="timezone America/Argentina/San_Luis">America/Argentina/San_Luis</option>
+                                <option value="timezone America/Barbados">America/Barbados</option>
+                                <option value="timezone America/Cambridge_Bay">America/Cambridge_Bay</option>
+                                <option value="timezone America/Chicago">America/Chicago</option>
+                                <option value="timezone America/Costa_Rica">America/Costa_Rica</option>
+                                <option value="timezone America/Denver">America/Denver</option>
+                                <option value="timezone America/Dominica">America/Dominica</option>
+                                <option value="timezone America/El_Salvador">America/El_Salvador</option>
+                                <option value="timezone America/Guyana">America/Guyana</option>
+                                <option value="timezone America/Indiana/Petersburg">America/Indiana/Petersburg</option>
+                                <option value="timezone America/Indiana/Vincennes">America/Indiana/Vincennes</option>
+                                <option value="timezone America/Jamaica">America/Jamaica</option>
+                                <option value="timezone America/Los_Angeles">America/Los_Angeles</option>
+                                <option value="timezone America/Mexico_City">America/Mexico_City</option>
+                                <option value="timezone America/Mexico_City">America/Mexico_City</option>
+                                <option value="timezone America/St_Johns">America/St_Johns</option>
+                                <option value="timezone Asia/Amman">Asia/Amman</option>
+                                <option value="timezone Asia/Baghdad">Asia/Baghdad</option>
+                                <option value="timezone Asia/Bangkok">Asia/Bangkok</option>
+                                <option value="timezone Asia/Colombo"></option>
+                                <option value="timezone Asia/Dubai">Asia/Dubai</option>
+                                <option value="timezone Asia/Hong_Kong">Asia/Hong_Kong</option>
+                                <option value="timezone Asia/Jakarta">Asia/Jakarta</option>
+                                <option value="timezone Asia/Kolkata">Asia/Kolkata</option>
+                                <option value="timezone Asia/Kuala_Lumpur">Asia/Kuala_Lumpur</option>
+                                <option value="timezone Asia/Kuwait">Asia/Kuwait</option>
+                                <option value="timezone Asia/Shanghai">Asia/Shanghai</option>
+                                <option value="timezone Asia/Singapore">Asia/Singapore</option>
+                                <option value="timezone Asia/Tokyo">Asia/Tokyo</option>
+                                <option value="timezone Atlantic/South_Georgia">Atlantic/South_Georgia</option>
+                                <option value="timezone Australia/Adelaide">Australia/Adelaide</option>
+                                <option value="timezone Australia/Brisbane">Australia/Brisbane</option>
+                                <option value="timezone Australia/Perth">Australia/Perth</option>
+                                <option value="timezone Australia/Sydney">Australia/Sydney</option>
+                                <option value="timezone Europe/Amsterdam">Europe/Amsterdam</option>
+                                <option value="timezone Europe/Berlin">Europe/Berlin</option>
+                                <option value="timezone Europe/Brussels">Europe/Brussels</option>
+                                <option value="timezone Europe/Budapest">Europe/Budapest</option>
+                                <option value="timezone Europe/Dublin">Europe/Dublin</option>
+                                <option value="timezone Europe/Jersey">Europe/Jersey</option>
+                                <option value="timezone Europe/London">Europe/London</option>
+                                <option value="timezone Europe/Madrid">Europe/Madrid</option>
+                                <option value="timezone Europe/Moscow">Europe/Moscow</option>
+                                <option value="timezone Europe/Paris">Europe/Paris</option>
+                                <option value="timezone Europe/Rome">Europe/Rome</option>
+                                <option value="timezone Europe/Vatican">Europe/Vatican</option>
+                                <option value="timezone Europe/Zurich">Europe/Zurich</option>
+                                <option value="timezone Indian/Maldives">Indian/Maldives</option>
+                                <option value="timezone Indian/Mauritius">Indian/Mauritius</option>
+                                <option value="timezone Pacific/Auckland">Pacific/Auckland</option>
+                                <option value="timezone Pacific/Honolulu">Pacific/Honolulu</option>
+                                <option value="timezone Pacific/Pago_Pago">Pacific/Pago_Pago</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" align="center">
+                            <label>Use UTC clock</label>
+                            <input id="utc_check" name="utc_check" type="checkbox" value="utc_check">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Root Password:</label>
+                            <div class="col-md-5">
+                                <input id="pass" name="pass" type="text" class="form-control input-md">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Confirm Password:</label>
+                            <div class="col-md-5">
+                                <input id="repass" name="repass" type="text" class="form-control input-md">
+                            </div>
+                        </div>
+                        <div class="form-group" align="center">
+                            <input id="basic_encrypt" name="basic_encrypt" type="checkbox" value="basic_encrypt" checked>                   <label>Encrypt root password</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Target Architecture:</label>
+                            <div class="col-md-5">
+                                <select class="form-control" style="width:300px" name="target_architecture" id="target_architecture">
+                                    <option value="x86, AMD64, or Intel EM64T">x86, AMD64, or Intel EM64T</option>
+                                    <option value="Intel Itanium">Intel Itanium</option>
+                                    <option value="IBM iSeries">IBM iSeries</option>
+                                    <option value="IBM pSeries">IBM pSeries</option>
+                                    <option value="IBM zSeries/s390">IBM zSeries/s390</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" align="center">
+                            <input id="reboot" name="reboot" type="checkbox" value="reboot">
+                            <label>Reboot System after installation</label>
+                        </div>
+                        <div class="form-group" align="center">
+                            <input type="checkbox" name="textmode" id`="textmode" value="textmode">
+                            <label>Perform installation in text mode (graphical is default)</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #2 Menu -->
+                <div id="menu2"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Installtion Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"  id="install_new_installation_label" >Perform new installation :</label>
+                            <div class="col-md-5">
+                                <input id="install_new_install" name="install_new_installation" type="radio" value="# Install OS instead of upgrade $$install" checked>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"  id="install_upgrade_installation_label" >Upgrade an existing installation  :</label>
+                            <div class="col-md-5">
+                                <input id="install_upgrade_install" name="install_new_installation" type="radio" value="# Upgrade existing installation $$upgrade">
+                            </div>
+                        </div>
+                        <h4 align="center">Installtion Sources :</h4>
+                        <div class="form-group" align="center">
+                            <label id="install_cd_rom_label">CD-ROM    :</label>
+                            <input id="install_cd_rom" name="install_source" type="radio" value="# Use CDROM installation media $$cdrom" checked>
+                        </div>
+                        <div class="form-group" align="center">
+                            <label id="install_nfs_label">NFS       : </label>
+                            <input id="install_nfs" name="install_source" type="radio" value="# Use NFS installation media $$nfs">
+                        </div>
+                        <div class="form-group" align="center">
+                            <label id="install_http_label">HTTP      : </label>
+                            <input id="install_http" name="install_source" type="radio" value="# Use network installation $$http">
+                        </div>
+                        <div class="form-group" align="center">
+                            <label id="install_ftp_label">FTP       : </label>
+                            <input id="install_ftp" name="install_source" type="radio" value="# Use network installation $$ftp">
+                        </div>
+                        <div class="form-group" align="center">
+                            <label id="install_hard_drive_label">Hard Drive: </label>
+                            <input id="install_hard_drive" name="install_source" type="radio" value="# Use hard drive installation media $$hard_drive">
+                        </div>
+                        <div class="install_ser_dict">
+                            <div class="form-group" align="center">
+                                <label class="col-md-4 control-label" id="install_server_label">Server :</label><div class="col-md-5">
+                                <input class="form-control input-md" id="install_source_server" name="install_source_server" type="text" >
+                            </div></div>
+                            <div class="form-group" align="center">
+                                <label class="col-md-4 control-label" id="install_directory_label">Directory :</label><div class="col-md-5">
+                                <input class="form-control input-md" id="install_source_dict" name="install_source_dict" type="text">
+                            </div></div>
+                        </div>
+                        <div class="install_ftp_chk">
+                            <div class="form-group" align="center">
+                                <label id="install_ftp_specify_label">Specify an FTP Username and Password :</label>
+                                <input id="install_check_ftp" name="install_check_ftp" type="checkbox" value="install_check_ftp">
+                            </div>
+                        </div>
+                        <div class="install_ftp_userpass">
+                            <div class="form-group" align="center">
+                                <label class="col-md-4 control-label" id="install_ftp_user_label">FTP Username :</label><div class="col-md-5">
+                                <input class="form-control input-md" id="install_ftp_user" name="install_ftp_user" type="text">
+                            </div></div>
+                            <div class="form-group" align="center">
+                                <label class="col-md-4 control-label" id="install_ftp_pass_label">FTP Password :</label><div class="col-md-5">
+                                <input id="install_ftp_pass" name="install_ftp_pass" type="text" class="form-control input-md" >
+                            </div></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #3 Menu -->
+                <div id="menu3"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Boot-Loader Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+                        <div id="boot loader">
+                            <h4 align="center">Install Type</h4>
+                            <div id ="Bootloader_install">
+                                <div class="form-group" align="center">
+                                    <input type="radio" name="Bootloader_Install" id="b1" value="bootloader --location" checked>
+                                    <label class="col-md-4 control-label">Install new boot loader</label>
+                                </div>
+                                <div class="form-group" align="center">
+                                    <input type="radio" name="Bootloader_Install" id="b2" value="none">
+                                    <label class="col-md-4 control-label">Do not install a boot loader</label>
+                               </div>
+                               <div class="form-group" align="center">
+                                    <input type="radio" name="Bootloader_Install" id="b3" value="upgrade">
+                                    <label class="col-md-4 control-label">Upgrade existing boot loader</label><br>
+                                </div>
+                            </div>
+                            <h4 align="center">GRUB Options</h4>
+                            <div class="form-group" align="center">
+                                <input type="checkbox" name="Bootloader_GRUB" id="Bootloader_GRUB" value="Use GRUB Password">
+                                <label class="col-md-4 control-label">Use GRUB Password</label>
+                            </div>
+                            <div class="form-group" align="center">
+                                <div id="grub_opt">
+                                    <div class="form-group" align="center">
+                                        <label  name="Bootloader_Password_label" id="Bootloader_Password_label">Password: </label>
+                                        <input type="text" name="Bootloader_Password" id="Bootloader_Password" value="" enabled>
+                                    </div>
+                                    <div class="form-group" align="center">
+                                        <label name="Bootloader_CPassword_label" id="Bootloader_CPassword_label">Confirm Password: </label>
+                                        <input type="text" name="Bootloader_CPassword" id="Bootloader_CPassword" value="" enabled>
+                                    </div>
+                                    <p align="center" id = "msg"></p>
+                                    <div class="form-group" align="center">
+                                        <input type="checkbox" name="Bootloader_Encypt" id="Bootloader_Encypt" value="Encrypt GRUB Password">
+                                        <label class="col-md-4 control-label">Encrypt GRUB Password</label>
+                                    </div>
+                                </div>
+                                <h4 align="center">Install Options</h4>
+                                <div id="ins_opt">
+                                    <div class="form-group" align="center">
+                                        <input type="radio" name="Bootloader_MBR" id="mbp1" value="=mbr" checked>
+                                        <label class="col-md-4 control-label">Install boot loader on Master Boot Record(MBR)</label><br>
+                                    </div>
+                                    <div class="form-group" align="center">
+                                        <input type="radio" name="Bootloader_MBR" id="mbp2" value="=partition">
+                                        <label class="col-md-4 control-label">Install boot loader on first sector of boot partition</label>
+                                    </div>
+                                </div>
+                                <div class="form-group" align="center">
+                                    <label name="Bootloader_Kernel_label" id="Bootloader_Kernel">Kernel Parameter: </label>
+                                    <input type="text" name="Bootloader_kernel_para" id="Bootloader_kernel_para" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #4 Menu -->
+                <div id="menu4"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Partition Information</h3>
+                    <hr/></div>
+                    <fieldset>
+                        <table align="center" style="width:70%">
+                            <tr>
+                                <td>
+                                    <div class="form-group" align="center">
+                                        <input type="checkbox" value="clear_mbr" id="prt_check_zerombr" name="prt_check_zerombr">
+                                        <label>Clear Master Boot Record :</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group" align="center">
+                                        <input type="checkbox" value="remove_part" id="prt_check_rmallpart" name="prt_check_rmallpart">
+                                        <label>Remove all existing partitions :</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group" align="center">
+                                        <input type="checkbox" value="init_disk_label" id="prt_check_initlabel" name="prt_check_initlabel">
+                                        <label>Initialize the Disk Label :</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group" align="center">
+                                        <input type="checkbox" value="auto_part" id="prt_check_autopart" name="prt_check_autopart">
+                                        <label>Use automatic partitioning :</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="prt_main">   <!-- Volume Group -->
+                            <table align="center" style="width:70%">
+                                <tr>
+                                    <td>
+                                        <div class="form-group" align="center">
+                                            <div class="prt_div_display">
+                                                <h4>Volume Group</h4>
+                                                <div id="prt_label_vgdetail">
+                                                    <label class="prt_label_display">Current VG's, Click on add for more VG...</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group" align="center">
+                                            <div id="prt_div_delete_vg_no">
+                                                <label>Enter Vg Number to Delete:</label>
+                                                <input type="text" id="prt_delete_vg_no">
+                                            </div>
+                                            <div class="prt_div_button">
+                                                <input type="button" id="prt_addvg" value="Add"> <!--input type="button" id="prt_editvg" value="Edit"-->
+                                                <input type="button" id="prt_deletevg" value="Delete">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="prt_form_content" id="prt_div_add_VG">
+                                            <h5 align="center">Add Volume Group:</h5>
+                                            <table align="center" style="width:70%">
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label>Name:</label></td>
+                                                        <td><input type="text" id="prt_txt_vgname"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label>Disk:</label></td>
+                                                        <td><input type="text" id="prt_txt_vgdisk"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label>VG Size:</label></td>
+                                                        <td><input type="text" id="prt_txt_vgsize"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label>Physical Extent Size (kB):</label></td>
+                                                        <td><input type="text" id="prt_txt_vgpesize"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="button" id="prt_vgadded" value="Save">
+                                                            <input type="button" id="prt_vg_cancle_added" value="Cancel">
+                                                        </td>
+                                                    </div>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table align="center" style="width:70%">
+                                <tr>
+                                    <td>
+                                        <div class="prt_div_display">
+                                            <div class="form-group" align="center">
+                                                <h4 align="center">Logical Volume</h4>
+                                                <div id="prt_label_lvdetail">
+                                                    <label class="prt_label_display">Current LV's Click on add more LV...</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group" align="center">
+                                            <div id="prt_div_delete_lv_no">
+                                                <label>Enter LV Number to Delete:</label>
+                                                <input type="text" id="prt_delete_lv_no">
+                                            </div>
+                                            <div class="prt_div_button">
+                                                <input type="button" id="prt_addlv" value="Add"><!--input type="button" value="Edit"-->
+                                                <input type="button" id="prt_deletelv" value="Delete">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="prt_form_content" id="prt_div_add_LV">
+                                            <h5 align="center">Add Logical Volume:</h5>
+                                            <table align="center" style="width:70%">
+                                                <tr>
+                                                    <td><label class="col-md-4 control-label">Mount Point:</label></td>
+                                                    <td>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group" align="center">
+                                                                <select class="form-control" style="width:300px" id="prt_combo_lv_mountpoint">
+                                                                    <option value="select" selected>select</option>
+                                                                    <option value="/">/</option>
+                                                                    <option value="/boot">/boot</option>
+                                                                    <option value="/var">/var</option>
+                                                                    <option value="/tmp">/tmp</option>
+                                                                    <option value="/usr">/usr</option>
+                                                                    <option value="/home">/home</option>
+                                                                    <option value="/opt">/opt</option>
+                                                                    <option value="swap">swap</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label class="col-md-4 control-label">Volume Group:</label></td>
+                                                        <td><input type="text" id="prt_txt_lv_vgno"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <td><label class="col-md-4 control-label">LV Name:</label></td>
+                                                    <td><input type="text" id="prt_txt_lv_name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group" align="center">
+                                                            <label class="col-md-4 control-label">File System Type:</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group" align="center">
+                                                                <select class="form-control" style="width:300px" id="prt_combo_lv_fstype" >
+                                                                    <option value="select" selected>select</option>
+                                                                    <option value="xfs">xfs</option>
+                                                                    <option value="ext2">ext2</option>
+                                                                    <option value="ext3">ext3</option>
+                                                                    <option value="ext4">ext4</option>
+                                                                    <option value="vfat">vfat</option>
+                                                                    <option value="swap">swap</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label class="col-md-4 control-label">LV Size (MB):</label></td>
+                                                        <td><input type="text" id="prt_txt_lvsize"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group" align="center">
+                                                            <label class="col-md-4 control-label">Grow:</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group" align="center">
+                                                                <select id="prt_combo_lv_grow" class="form-control" style="width:300px">
+                                                                    <option value="select" selected>select</option>
+                                                                    <option value="yes">Yes</option>
+                                                                    <option value="no">No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td><label class="col-md-4 control-label">Maximum Size (MB):</label></td>
+                                                        <td><input type="text" id="prt_txt_lv_maxsize"></td>
+                                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <div class="form-group" align="center">
+                                                        <td></td>
+                                                    </div>
+                                                    <td>
+                                                        <div class="form-group" align="center">
+                                                            <input type="button" id="prt_lvadded" value="Save">
+                                                            <input type="button" id="prt_cancle_lvadded" value="Cancel">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--</form>-->
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group" align="center">
+                                <input type="button" id="prt_bt_save" value="Save_Partion_Info">
+                            </div>
+                            <div class="form-group" align="center">
+                                <input type="text" id="prt_all_vg" name="prt_all_vg" value="0">
+                                <input type="text" id="prt_all_lv" name="prt_all_lv" value="0">
+                            </div>
+                            <div class="form-group" align="center">
+                                <input type="button" id="prt_bt_edit" value="Edit_Partion_Info">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- #5 Menu -->
+                <div id="menu5"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Network Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+                        <div class="form-group" align="center">
+                            <input type="checkbox" value="default_network" id="net_check_default_network" name="net_check_default_network">
+                            <label class="col-md-4 control-label">Use default networking (DHCP)</label>
+                        </div>
+                        <div class="form-group" align="center">
+                            <div id="net_main_div">
+                                <div id="net_devices">
+                                    <label class="col-md-4 control-label">Current Devices are...</label>
+                                </div>
+                                <div id="net_device_delete">
+                                    <label class="col-md-4 control-label">Enter Device Number to Delete:</label>
+                                    <input type="text" id="net_txt_delete_dev_no">
+                                    <input type="button" id="net_bt_delete" value="Delete">
+                                </div>
+                                <div>
+                                    <input type="button" id="net_bt_add" value="Click Here To Add New N/W Device">
+                                </div>
+                                <table id="net_add_device_div" align="center" style="width:70%">
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Network Device:</label></td>
+                                        <td><input type="text" id="net_txt_device_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Network Type:</label></td>
+                                        <td>
+                                            <div class="col-md-5">
+                                                <select id="net_combo_net_type" class="form-control" style="width:275px">
+                                                    <option value="select" selected>select</option>
+                                                    <option value="dhcp">DHCP</option>
+                                                    <option value="static">Static IP</option>
+                                                    <option value="bootp">BOOTP</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">IP Address:</label></td>
+                                        <td><input type="text" id="net_txt_ip"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Netmask:</label></td>
+                                        <td><input type="text" id="net_txt_netmask"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Gateway:</label></td>
+                                        <td><input type="text" id="net_txt_gateway"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Name Server:</label></td>
+                                        <td><input type="text" id="net_txt_nameserver"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <input type="button" id="net_save_device" value="OK">
+                                            <input type="button" id="net_cancle_device" value="Cancle">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-group" align="center">
+                            <input type="text" id="net_txt_all_devices" name="net_all_devices" value="0">
+                            <input type="button" id="net_bt_save_device_info" value="Save_Network_Information">
+                            <input type="button" id="net_bt_edit_device_info" value="Edit_Network_Information">
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #6 Menu -->
+                <div id="menu6"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Authentication Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+                        <h4 align="center">Authentication :</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_shadow_pass_label">Use Shadow Passwords : </label>
+                            <input id="auth_shadow_pass" name="auth_shadow_pass" type="checkbox" value=" --useshadow" checked>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" id="auth_security_algo_label">Security Password Algorithm :</label>
+                            <div class="col-md-5">
+                                <select class="form-control" style="width:300px" name="auth_security_algo" id="auth_security_algo" >
+                                    <option value=" --passalgo=sha512">SHA512</option>
+                                    <option value=" --passalgo=sha256">SHA256</option>
+                                    <option value=" --passalgo=md5">MD5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" align="center">
+                            <label id="auth_finger_reader_label">Enable Fingerprint Reader : </label>
+                            <input id="auth_finger_reader" name="auth_finger_reader" type="checkbox" value=" --enablefingerprint">
+                        </div>
+                        <h4 align="center">NIS Authentication</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_enable_nis_label">Enable NIS :  </label>
+                            <input id="auth_enable_nis" name="auth_enable_nis" type="checkbox" value=" --enablenis">
+                        </div>
+                        <div id="auth_nis_block">
+                            <div class="form-group" align="center">
+                                <label id="auth_nis_domain_label">NIS Domain : </label>
+                                <input id="auth_nis_domain" name="auth_nis_domain" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_broadcast_nis_label">Use broadcast to find NIS server  : </label>
+                                <input id="auth_broadcast_nis" name="auth_broadcast_nis" type="checkbox" value=" --enablenis">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_nis_server_label">NIS Server : </label>
+                                <input id="auth_nis_server" name="auth_nis_server" type="text">
+                            </div>
+                        </div>
+                        <h4 align="center">LDAP Authentication:</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_enable_ldap_label">Enable LDAP :  </label>
+                            <input id="auth_enable_ldap" name="auth_enable_ldap" type="checkbox" value=" --enableldap --enableldapauth">
+                        </div>
+                        <div id="auth_ldap_block">
+                            <div class="form-group" align="center">
+                                <label id="auth_ldap_server_label">LDAP Server : </label>
+                                <input id="auth_ldap_server" name="auth_ldap_server" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_ldap_base_label">LDAP Base Name : </label>
+                                <input id="auth_ldap_base" name="auth_ldap_base" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_ldap_certificate_label">Load CA certificate :  </label>
+                                <input id="auth_ldap_certificate" name="auth_ldap_certificate" type="checkbox" value=" --ldaploadcacert=">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_ldap_cert_url_label">CA Certificate URL : </label>
+                                <input id="auth_ldap_cert_url" name="auth_ldap_cert_url" type="text">
+                            </div>
+                        </div>
+                        <h4 align="center">Kerberos 5 Authentication:</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_enable_krb5_label">Enable Kerberos 5 :  </label>
+                            <input id="auth_enable_krb5" name="auth_enable_krb5" type="checkbox" value=" --enablekrb5">
+                        </div>
+                        <div id="auth_krb_block">
+                            <div class="form-group" align="center">
+                                <label id="auth_krb5_realm_label">Kerberos Realm : </label>
+                                <input id="auth_krb5_realm" name="auth_krb5_realm" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_kerberos_domain_label">Kerberos Domain Controller : </label>
+                                <input id="auth_kerberos_domain" name="auth_kerberos_domain" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_krb5_master_label">Kerberos Master server : </label>
+                                <input id="auth_krb5_master" name="auth_krb5_master" type="text">
+                            </div>
+                        </div>
+                        <h4 align="center">SMB Authentication:</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_enable_smb_label">Enable SMB Authentication :  </label>
+                            <input id="auth_enable_smb" name="auth_enable_smb" type="checkbox" value=" --enablesmbauth">
+                        </div>
+                        <div id="auth_smb_block">
+                            <div class="form-group" align="center">
+                                <label id="auth_smb_server_label">SMB Server : </label>
+                                <input id="auth_smb_server" name="auth_smb_server" type="text">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label id="auth_smb_workgrp_label">SMB Workgroup : </label>
+                                <input id="auth_smb_workgrp" name="auth_smb_workgrp" type="text">
+                            </div>
+                        </div>
+                        <h4 align="center">Name Switch Cache Daemon Authentication:</h4>
+                        <div class="form-group" align="center">
+                            <label id="auth_switch_cache_label">Enable name switch cache :  </label>
+                            <input id="auth_switch_cache" name="auth_switch_cache" type="checkbox" value=" --enablesmbauth">
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #7 Menu -->
+                <div id="menu7"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Firewall Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+                       <div class="form-group">
+                            <label class="col-md-4 control-label" name="firewall_selinux_label">SELinux :</label>
+                            <div class="col-md-5">
+                                <select class="form-control" style="width:300px" name="firewall_selinux_state" id="firewall_selinux_state" >
+                                    <option value="selinux --enforcing">Active</option>
+                                    <option value="selinux --permissive">Warn</option>
+                                    <option value="selinux --disabled">Disabled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" name="firewall_sequrity_level_label">Sequrity Level :</label>
+                            <div class="col-md-5">
+                                <select class="form-control" style="width:300px" name="firewall_sequrity_level" id="firewall_sequrity_level" >
+                                    <option value="Enable_firewall">Enable firewall</option>
+                                    <option value="Disable_firewall">Disable firewall</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="firewall_trusted_service_config">
+                            <h4 align="center">Trusted Services:</h4>
+                            <div class="form-group" align="center">
+                                <label name="firewall_www">WWWW(HTML): </label>
+                                <input type="checkbox" name="firewall_http_service" id="firewall_http_service" value="--http">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label name="firewall_ftp">FTP: </label>
+                                <input type="checkbox" name="firewall_ftp_service" id="firewall_ftp_service" value="--ftp">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label name="firewall_ssh">SSH: </label>
+                                <input type="checkbox" name="firewall_ssh_service" id="firewall_ssh_service" value="--ssh">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label name="firewall_telnet">Telnet: </label>
+                                <input type="checkbox" name="firewall_telnet_service" id="firewall_telnet_service" value="--telnet">
+                            </div>
+                            <div class="form-group" align="center">
+                                <label name="firewall_smtp">SMTP(mail): </label>
+                                <input type="checkbox" name="firewall_mail_service" id="firewall_mail_service" value="--smtp">
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-4 control-label" name="firewall_other_form_label">Other Port (1029:tcp) :</label><div class="col-md-5">
+                                <input class="form-control input-md" type="text" name="firewall_other_port" id="firewall_other_port" value="">
+                            </div></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #8 Menu -->
+                <div id="menu8"><br/><br/><br/>
+                <div style="color: whitesmoke; background: black;"><hr/>
+                <h3 align="center">Display Configuration</h3>
+                <hr/></div>
+                <fieldset>
+                    <table align="center" style="width:70%">
+                        <tr>
+                            <td id="display-third-cell">
+                                <label>On first boot, Setup Agent :</label>
+                            </td>
+                            <td style="width:330px">
+                                <div class="col-md-5">
+                                    <select class="form-control" name="first-boot" id="first-boot" style="width:275px">
+                                        <option value="Disabled">Disabled</option>
+                                        <option value="Enabled">Enabled</option>
+                                        <option value="Reconfigure">Enabled in reconfiguration mode</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="display_checkbox" id="display_checkbox" value="display_checkbox" onClick="toggleSelect()" checked>
+                                <label>Install a graphical environment</label>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                </div>
+                <hr/>
+                <!-- #9 Menu -->
+                <div id="menu9"><br><br><br>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Package Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+                        <div class="form-group" align="center">
+                            <label class="col-md-4 control-label">Package Selection Enable: <input type="checkbox" id="pkg_enb_chk" name="pkg_gnome"></label>
+                            </div>
+
+                        <div id="pkg_data" style="width: 100%; display: table; padding-left: 100px;" class="form-group" >
+                            <div style="display: table-row">
+                                <div class="col-md-3">
+                                    <ul class="pkg_ul">
+                                        <optgroup label="Package Selection"></optgroup>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_gnome" name="pkg_gnome">GNOME Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_kde" name="pkg_kde">KDE Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_xfce" name="pkg_xfce">Xfce Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_appli" name="pkg_appli">Applications</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_lxde" name="pkg_lxde">LXDE Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_lxqt" name="pkg_lxqt">LXQt Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_chinn" name="pkg_chinn">Chinnamon Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_mate" name="pkg_mate">MATE Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_hawaii" name="pkg_hawaii">Hawaii Desktop</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_dev" name="pkg_dev">Development</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_server" name="pkg_server">Servers</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_base" name="pkg_base">Base System</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_cont" name="pkg_cont">Content</label></li>
+                                        <li class="pkg_li"><label class="pkg_label"><input type="checkbox" id="pkg_uncat" name="pkg_uncat">Uncategorized</label></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4" style=" display: table-cell; padding-left: 30px">
+                                    <ul class="pkg_ul">
+                                        <div id="pkg_gnome_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="GNOME Desktop Package"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="epiphany" id="pkg_group_epiphany" name="pkg_group_epiphany">Epiphany Web Browser</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="gnome-games" id="pkg_group_gnome-games" name="pkg_group_gnome-games">Game for GNOME Desktop</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="gnome-desktop" id="pkg_group_gnome-desktop" name="pkg_group_gnome-desktop">GNOME</label></li>
+                                        </div>
+                                        <div id="pkg_kde_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="KDE Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-desktop" id="pkg_group_kde-desktop" name="pkg_group_kde-desktop">KDE</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-apps" id="pkg_group_kde-apps" name="pkg_group_kde-apps">KDE Applications</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-education" id="pkg_group_kde-education" name="pkg_group_kde-education">KDE Educational Applications</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-media" id="pkg_group_kde-media" name="pkg_group_kde-media">KDE Multimedia Support</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-office" id="pkg_group_kde-office" name="pkg_group_kde-office">KDE Office</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="kde-telepathy" id="pkg_group_kde-telepathy" name="pkg_group_kde-telepathy">KDE Telepathy</label></li>
+                                        </div>
+                                        <div id="pkg_xfce_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="Xfce Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="xfce-apps" id="pkg_group_xfce-apps" name="pkg_group_xfce-apps">Applications of Xfce Desktop</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="xfce-desktop" id="pkg_group_xfce-desktop" name="pkg_group_xfce-desktop">Extra plugin of Xfce Panel</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="xfce-extra-plugins" id="pkg_group_xfce-extra-plugins" name="pkg_group_xfce-extra-plugins">Multimedia Support for Xfce</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="xfce-media" id="pkg_group_xfce-media" name="pkg_group_xfce-media">Xfce</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="xfce-office" id="pkg_group_xfce-office" name="pkg_group_xfce-office">Xfce Office</label></li>
+                                        </div>
+                                        <div id="pkg_appli_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="Applications"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="audio" id="pkg_group_audio" name="pkg_group_audio">Audio Production</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="authoring-and-publishing" id="pkg_group_authoring-and-publishing" name="pkg_group_authoring-and-publishing">Authoring and Publishing</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="design-suite" id="pkg_group_design-suite" name="pkg_group_design-suite">Design Suite</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="editors" id="pkg_group_editors" name="pkg_group_editors">Editors</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="education" id="pkg_group_education" name="pkg_group_education">Eductional Software</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="engineering-and-scientific" id="pkg_group_engineering-and-scientific" name="pkg_group_engineering-and-scientific">Engineering and Scientific</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="firefox" id="pkg_group_firefox" name="pkg_group_firefox">Firefox Web Browser</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="font-design" id="pkg_group_font-design" name="pkg_group_font-design">Font design and Packaging</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="games" id="pkg_group_games" name="pkg_group_games">Games and Entertainment</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="graphical-internet" id="pkg_group_graphical-internet" name="pkg_group_graphical-internet">Graphical Internet</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="graphics" id="pkg_group_graphics" name="pkg_group_graphics">Graphics</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="libreoffice" id="pkg_group_libreoffice" name="pkg_group_libreoffice">Libre Office</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="medical" id="pkg_group_medical" name="pkg_group_medical">Medical Applications</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="office" id="pkg_group_office" name="pkg_group_office">Office/Productivity</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="sound-and-video" id="pkg_group_sound-and-video" name="pkg_group_sound-and-video">Sound and Video</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="text-internet" id="pkg_group_text-internet" name="pkg_group_text-internet">Text-Based Internet</label></li>
+                                        </div>
+                                        <div id="pkg_lxde_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="LXDE Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxde-apps" id="pkg_group_lxde-apps" name="pkg_group_lxde-apps">Applications of LXDE Desktop</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxde-desktop" id="pkg_group_lxde-desktop" name="pkg_group_lxde-desktop">LXDE</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxde-office" id="pkg_group_lxde-office" name="pkg_group_lxde-office">LXDE Office</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxde-media" id="pkg_group_lxde-media" name="pkg_group_lxde-media">Multimedia Support for LXDE</label></li>
+                                        </div>
+                                        <div id="pkg_lxqt_package" class="pkg_packages" style="display: none;">
+                                            <optgroup label="LXQt Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxqt-apps" id="pkg_group_lxqt-apps" name="pkg_group_lxqt-apps">Applications of LXQt Desktop</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxqt-desktop" id="pkg_group_lxqt-desktop" name="pkg_group_lxqt-desktop">LXQt</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxqt-office" id="pkg_group_lxqt-office" name="pkg_group_lxqt-office">LXQt Office</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="lxqt-media" id="pkg_group_lxqt-media" name="pkg_group_lxqt-media">Multimedia Support for LXQt</label></li>
+                                        </div>
+                                        <div id="pkg_chinn_package"  class="pkg_packages" style="display: none;">
+                                            <optgroup label="Chinnamon Desktop"></optgroup>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" class="pkg_group" value="cinnamon-desktop" id="pkg_group_cinnamon-desktop" name="pkg_group_cinnamon-desktop">Chinnamon</label></li>
+                                        </div>
+                                        <div id="pkg_mate_package">
+
+                                        </div>
+                                        <div id="pkg_hawaii_package">
+
+                                        </div>
+                                        <div id="pkg_sugar_package">
+
+                                        </div>
+                                        <div id="pkg_dev_package">
+
+                                        </div>
+                                        <div id="pkg_ser_package">
+
+                                        </div>
+                                        <div id="pkg_base_package">
+
+                                        </div>
+                                        <div id="pkg_content_package">
+
+                                        </div>
+                                        <div id="pkg_uncat_package">
+
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5" style=" display: none; padding-left: 20px">
+                                    <ul class="pkg_ul">
+                                        <optgroup label="Optional"></optgroup>
+                                        <div id="" class="" style=" display: none;">
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" value="pkg_chinn_libre_opt_base" id="pkg_chinn_libre_opt_base" name="pkg_chinn_libre_opt_base" >libreoffice-base</label></li>
+                                            <li class="pkg_li"><label class="pkg_label"><input type="checkbox" value="pkg_chinn_libre_opt_pyuno" id="pkg_chinn_libre_opt_pyuno" name="pkg_chinn_libre_opt_pyuno" checked>libreoffice-pyuno</label></li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #10 Menu -->
+                <div id="menu10"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;">
+                        <hr/>
+                        <h3 align="center">Pre-Installtion Configuration</h3>
+                        <hr/>
+                    </div>
+                    <fieldset>
+                        <div class="form-group" align="center">
+                            <label class="control-label">Pre-Script Enable : </label>
+                            <input id="pre_interpreter_enble" name="pre_interpreter_enble" type="checkbox">
+                        </div>
+                        <div id="pre_data">
+                            <div class="form-group" align="center">
+                                <input id="pre_inter_allow" name="pre_inter_allow" type="checkbox">
+                                <label>Use an interpreter </label><div>
+                            </div><br>
+                            <div class="form-group" align="center">
+                                <label class="col-md-4 control-label">Interpreter Name: </label><div class="col-md-5">
+                                <input id="pre_interpreter_name" name="pre_interpreter_name" type="text" class="form-control input-md">
+                            </div></div>
+                            <div class="form-group" align="center">
+                                <textarea rows="4" cols="50" id="pre_interpreter_scr" name="pre_interpreter_scr" style="width: 733px; height: 454px;"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- #11 Menu -->
+                <div id="menu11"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Post-Installtion Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+                        <div class="form-group" align="center">
+                            <input id="post_nochroot_allow" name="post_nochroot_allow" type="checkbox">
+                            <label id="post_nochroot_label">Run outside of chroot Environment </label>
+                        </div>
+                        <div class="form-group" align="center">
+                            <input id="post_inter_allow" name="post_inter_allow" type="checkbox">
+                            <label>Use an interpreter </label>
+                            <input id="post_interpreter_name" name="post_interpreter_name" type="text">
+                        </div>
+                        <div class="form-group" align="center">
+                            <textarea rows="4" cols="50" id="post_interpreter_scr" name="post_interpreter_scr" style="width: 733px; height: 454px;"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Preview and Save Button Starts -->
+                <div id="mysave">
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input type="submit" name="save" class="btn btn-default" value="Save File"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="preview">
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input type="button" align="left" class="btn btn-default" id="preview_all" name="preview" value="Preview File"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Preview and Save Button Ends -->
+            </form>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div id="addcontent" class="modal-content">
+                <span id="previewspan" class="close">&times;</span>
+                <p id="previewspan"></p>
+                <!-- Basic Configuration -->
+                <p id="file_installation_line1"></p>
+                <p id="file_installation_line2"></p>
+                <p id="file_installation_line3"></p>
+                <p id="file_installation_line4"></p>
+                <!-- Boot-Loader Configuration -->
+                <p id="part_line1"></p>
+                <p id="part_line1_1"></p>
+                <p id="part_line2"></p>
+                <p id="part_line2_1"></p>
+                <p id="part_line3_0"></p>
+                <p id="net_line1"></p>
+                <p id="file_auth_config_line1"># System authorization information</p>
+                <p id="file_auth_config_line2"></p>
+                <p id="file_firewall_line1"></p>
+                <p id="file_firewall_line2"></p>
+                <p id="file_firewall_line3"></p>
+                <p id="file_firewall_line4"></p>
+                <!-- Display Configuration -->
+                <!-- Package Configuration -->
+                <p id="file_pre_line1"></p>
+                <p id="file_pre_line2"></p>
+                <p id="file_pre_line3"></p>
+                <p id="file_post_line1"></p>
+                <p id="file_post_line2"></p>
+                <p id="file_post_line3"></p>
+            </div>
+        </div>
+    </body>
+</html>
+

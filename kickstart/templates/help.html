@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kickstart Server Configuration Tool</title>
+        <script src="{{ url_for('static', filename='js/part_js_tr0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/notify.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.1.0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/others.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/note_eff.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/title.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/simple-sidebar.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/part_css_tr0.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#" id="firsttitle">Kickstart Configuration Tool</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#menu1">Basic Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu2">Installtion Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu3">Boot-Loader Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu4">Partition Information</a>
+                    </li>
+                    <li>
+                        <a href="#menu5">Network Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu6">Authentication Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu7">Firewall Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu8">Display Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu9">Package Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu10">Pre-Installtion Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#menu11">Post-Installtion Configuration</a>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <div id="dev-fix">
+                    <div class="container" align="center" style="padding-top: 10px" >
+                        <div class="btn-group">
+                            <a href="help.html"><button style="background-color: #000000;" name="firstbutton" id="firstbutton" type="button" class="btn btn-primary" value="help">Help</button></a>
+                            <a href="Customise.html"><button style="background-color: #3C3C3C;" name="secondbutton" id="secondbutton" type="button" class="btn btn-primary" value="Customise">Customise</button></a>
+                            <a href="/"><button style="background-color: #3C3C3C;" name="thirdbutton" id="thirdbutton" type="button" class="btn btn-primary" value="Configuration">Configuration</button></a>
+                            <a href="Setup.html"><button style="background-color: #3C3C3C;" name="forthbutton" id="forthbutton" type="button" value="setup" class="btn btn-primary">Setup</button></a>
+                            <a href="Credits.html"><button style="background-color: #3C3C3C;" name="fifthbutton" id="fifthbutton" type="button" class="btn btn-primary" value="Credits">Credits&#10026;</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="myslide">
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> << </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $("#menu-toggle").click(function(e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+
+            </script>
+                <!-- #1 Menu -->
+                <div id="menu1"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Basic Configuration</h3><hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #2 Menu -->
+                <div id="menu2"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Installtion Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #3 Menu -->
+                <div id="menu3"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Boot-Loader Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #4 Menu -->
+                <div id="menu4"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Partition Information</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+
+                <!-- #5 Menu -->
+                <div id="menu5"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Network Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #6 Menu -->
+                <div id="menu6"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Authentication Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #7 Menu -->
+                <div id="menu7"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Firewall Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #8 Menu -->
+                <div id="menu8"><br/><br/><br/>
+                <div style="color: whitesmoke; background: black;"><hr/>
+                <h3 align="center">Display Configuration</h3>
+                <hr/></div>
+                <fieldset>
+
+                </fieldset>
+                </div>
+                <hr/>
+                <!-- #9 Menu -->
+                <div id="menu9"><br><br><br>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Package Configuration</h3>
+                    <hr/> </div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #10 Menu -->
+                <div id="menu10"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;">
+                        <hr/>
+                        <h3 align="center">Pre-Installtion Configuration</h3>
+                        <hr/>
+                    </div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #11 Menu -->
+                <div id="menu11"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">Post-Installtion Configuration</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+        </div>
+    </body>
+</html>
+
