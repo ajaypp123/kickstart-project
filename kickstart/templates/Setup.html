@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kickstart Server Configuration Tool</title>
+        <script src="{{ url_for('static', filename='js/part_js_tr0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/notify.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.1.0.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/effect.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/others.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/prev.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/note_eff.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/title.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/simple-sidebar.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/part_css_tr0.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/preview.css')}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#" id="firsttitle">Kickstart Tool Setup</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#menu1">FTP Setup</a>
+                    </li>
+                    <li>
+                        <a href="#menu2">HTTP Setup</a>
+                    </li>
+                    <li>
+                        <a href="#menu3">NFS Setup</a>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <div id="dev-fix">
+                    <div class="container" align="center" style="padding-top: 10px" >
+                        <div class="btn-group">
+                            <a href="help.html"><button style="background-color: #3C3C3C;" name="firstbutton" id="firstbutton" type="button" class="btn btn-primary" value="help">Help</button></a>
+                            <a href="Customise.html"><button style="background-color: #3C3C3C;" name="secondbutton" id="secondbutton" type="button" class="btn btn-primary" value="Customise">Customise</button></a>
+                            <a href="/"><button style="background-color: #3C3C3C;" name="thirdbutton" id="thirdbutton" type="button" class="btn btn-primary" value="Configuration">Configuration</button></a>
+                            <a href="Setup.html"><button style="background-color: #000000;" name="forthbutton" id="forthbutton" type="button" value="setup" class="btn btn-primary">Setup</button></a>
+                            <a href="Credits.html"><button style="background-color: #3C3C3C;" name="fifthbutton" id="fifthbutton" type="button" class="btn btn-primary" value="Credits">Credits&#10026;</button></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="myslide">
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> << </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $("#menu-toggle").click(function(e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+
+            </script>
+                <!-- #1 Menu -->
+                <div id="menu1"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">FTP Setup</h3><hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #2 Menu -->
+                <div id="menu2"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">HTTP Setup</h3>
+                    <hr/> </div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+                <!-- #3 Menu -->
+                <div id="menu3"><br/><br/><br/>
+                    <div style="color: whitesmoke; background: black;"><hr/>
+                    <h3 align="center">NFS Setup</h3>
+                    <hr/></div>
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+        </div>
+    </body>
+</html>
+
